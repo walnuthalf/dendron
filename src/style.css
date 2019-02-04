@@ -1,0 +1,22 @@
+/* using css not styled because of the styled-components font-face bug :/ */
+@font-face {
+  font-family: SFUIDisplay;
+  src: url('/fonts/SFUIDisplay-Regular.otf');
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+}
