@@ -1,46 +1,18 @@
-import React, { Fragment } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import React from 'react';
+import styled from 'styled-components';
 
-const GET_CHANNELS = gql `
-    query {
-      channels {
-        name
-        type
-        hasUnread
-        id
-        lastMessage {
-          id
-          insertedAt
-          text
-          user {
-            id
-            name
-            username
-          }
-        }
-      }
-    }
-  `
+import Channels from '../containers/Channels';
+import Chat from '../containers/Chat'
 
+const Wrapper = styled.div`
+  display: flex;
+`;
 
-const Chat = () => (
-  <Query query={GET_CHANNELS}>
-    {({data, loading, error, fetchMore}) => {
-      if (loading) return <p>Loading</p>
-      if (error) return <p>Error</p>
-
-      return (
-        <Fragment>
-          <p>header</p>
-          {data.channels && data.channels.map(item => (
-            <h1>{item.name}</h1>
-          ))}
-        </Fragment>
-      )
-    }}
-
-  </Query>
+const ChatPage = () => (
+  <Wrapper>
+    <Channels />
+    <Chat />
+  </Wrapper>
 );
 
-export default Chat;
+export default ChatPage;

@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Messages from './Messages';
-import Form from './Form';
 
 const Wrapper = styled.div`
   flex-basis: 60%;
@@ -13,8 +11,7 @@ const Wrapper = styled.div`
 
 const Chat = () => (
   <Wrapper>
-    <Form />
-    <Messages />
+    Chat
   </Wrapper>
 );
 
