@@ -35,13 +35,13 @@ const Container = styled.div`
 const Messages = ({ messages }) => (
   <Wrapper>
     <Container>
-      {messages.map(message => (<DateBlock key={message.id} {...message} />))}
+      { messages.map(message => (<DateBlock key={ message.id } { ...message } />)) }
     </Container>
   </Wrapper>
 );
 
 const mapStateToProps = (state) => ({
-  messages: state.messages.sort((a, b) => b.firstMessageDate - a.firstMessageDate)
+  messages: state.messages.sort((a, b) => b.firstMessageDate - a.firstMessageDate),
 });
 
 export default connect(mapStateToProps)(Messages);

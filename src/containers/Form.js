@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import Button from '../components/Button';
-import { sendMessage, bootstrapMessage } from '../actions'
+import { sendMessage, bootstrapMessage } from '../actions';
 
 const Wrapper = styled.div`
   padding: 1px;
@@ -45,13 +45,13 @@ class Form extends Component {
   }
 
   state = {
-    textValue: ''
+    textValue: '',
   }
 
   handleChange = (e) => {
     this.setState({
-      textValue: e.target.value
-    })
+      textValue: e.target.value,
+    });
   }
 
   handleSendMessage = () => {
@@ -61,7 +61,7 @@ class Form extends Component {
     if (!textValue.length) return null;
 
     sendMessage(textValue);
-    this.setState({ textValue: '' })
+    this.setState({ textValue: '' });
   }
 
   handleKeyDown = (e) => {
@@ -77,14 +77,14 @@ class Form extends Component {
       <Wrapper>
         <Head>Чат</Head>
         <Textarea
-          onKeyDown={this.handleKeyDown}
-          value={textValue}
-          onChange={this.handleChange}
+          onKeyDown={ this.handleKeyDown }
+          value={ textValue }
+          onChange={ this.handleChange }
           placeholder="Сообщение"
         />
         <Button
-          onClick={this.handleSendMessage}
-          disabled={!textValue.length}
+          onClick={ this.handleSendMessage }
+          disabled={ !textValue.length }
         >
           Отправить
         </Button>

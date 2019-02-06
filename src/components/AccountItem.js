@@ -55,7 +55,7 @@ const LastOperation = styled.div`
 `;
 
 const ColorOperation = styled.span`
-  color: ${p => p.isNegative ? '#de1c28' : '#6ece1a'};
+  color: ${ p => p.isNegative ? '#de1c28' : '#6ece1a' };
 `;
 
 const ToggleBtn = styled(Link)`
@@ -70,14 +70,14 @@ const ToggleBtn = styled(Link)`
 `;
 
 const MaximizeIcon = styled.img.attrs({
-  src: '/img/maximize.svg'
+  src: '/img/maximize.svg',
 })`
   width: 18px;
   height: 18px;
 `;
 
 const CloseIcon = styled.img.attrs({
-  src: '/img/close.svg'
+  src: '/img/close.svg',
 })`
   width: 15px;
   height: 14px;
@@ -86,22 +86,23 @@ const CloseIcon = styled.img.attrs({
 const AccountItem = ({ id, balance, currency, rate, createdAt, linkTo, lastOperation = false, isOpen = false }) => {
   const balanceSign = getBalanceSign(currency);
   const isNegative = lastOperation.sum < 0;
-  const sumString = lastOperation && `${lastOperation.sum.toLocaleString().replace('-', '')} ${balanceSign}`;
-  const balanceString = `${balance.toLocaleString()} ${balanceSign}`;
+  const sumString = lastOperation && `${ lastOperation.sum.toLocaleString().replace('-', '') } ${ balanceSign }`;
+  const balanceString = `${ balance.toLocaleString() } ${ balanceSign }`;
   const createdDate = formatDate(createdAt, true);
   const lastOperationDate = formatDate(lastOperation.date, true);
 
   return (
     <Wrapper>
       <Text>
-        <AccountId>Счет № {id}</AccountId>
-        <Sum>{balanceString}</Sum>
-        <YearFee>{rate}% годовых</YearFee>
-        <CreatedDate>Cоздан: {createdDate}</CreatedDate>
-        {lastOperation && <LastOperation>Последняя операция: {lastOperationDate} (<ColorOperation isNegative={isNegative}>{isNegative ? '-' : '+'} { sumString }</ColorOperation>) </LastOperation>}
+        <AccountId>Счет № { id }</AccountId>
+        <Sum>{ balanceString }</Sum>
+        <YearFee>{ rate }% годовых</YearFee>
+        <CreatedDate>Cоздан: { createdDate }</CreatedDate>
+        { lastOperation && <LastOperation>Последняя операция: { lastOperationDate } (<ColorOperation isNegative={ isNegative }>{ isNegative ? '-' : '+' } { sumString }</ColorOperation>) </LastOperation> }
       </Text>
-      <ToggleBtn to={linkTo}>{ isOpen ? <CloseIcon /> : <MaximizeIcon />} </ToggleBtn>
+      <ToggleBtn to={ linkTo }>{ isOpen ? <CloseIcon /> : <MaximizeIcon /> } </ToggleBtn>
     </Wrapper>
-)};
+  );
+};
 
 export default AccountItem;

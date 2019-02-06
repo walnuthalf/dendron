@@ -5,12 +5,12 @@ import DepositItem from '../components/DepositItem';
 
 const DepositList = ({ deposits }) => (
   <div>
-    { deposits.map( (deposit) => (<DepositItem key={deposit.id} {...deposit} />) ) }
+    { deposits.map( (deposit) => (<DepositItem key={ deposit.id } { ...deposit } />) ) }
   </div>
 );
 
 const mapStateToProps = (state) => ({
-  deposits: state.deposits
-})
+  deposits: state.deposits,
+});
 
 export default connect(mapStateToProps)(DepositList);

@@ -6,9 +6,9 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
   margin: 30px 0;
-  ${p => p.reversed && css`
+  ${ p => p.reversed && css`
     justify-content: flex-start;
-  `}
+  ` }
   &:first-of-type{
     margin-top: 0;
   }
@@ -46,20 +46,20 @@ const Profile = styled.img`
   height: 41px;
   margin-left: 15px;
   order: 2;
-  ${p => p.reversed && css`
+  ${ p => p.reversed && css`
     order: 0;
     margin-right: 15px;
     margin-left: 0;
-  `}
+  ` }
 `;
 
-const Message = ({author, messageBody, isReversed, imgSrc}) => (
-  <Wrapper reversed={isReversed}>
+const Message = ({ author, messageBody, isReversed, imgSrc }) => (
+  <Wrapper reversed={ isReversed }>
     <Text>
-      <Author>{author}{author &&': '}</Author>
-      <Body>{messageBody}</Body>
+      <Author>{ author }{ author &&': ' }</Author>
+      <Body>{ messageBody }</Body>
     </Text>
-    <Profile reversed={isReversed} src={imgSrc}/>
+    <Profile reversed={ isReversed } src={ imgSrc }/>
   </Wrapper>
 );
 

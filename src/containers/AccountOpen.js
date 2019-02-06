@@ -17,15 +17,15 @@ const HistoryHead = styled.div`
 
 const AccountOpen = ({ account, sendOperation }) => (
   <div>
-    <AccountItem key={account.id} {...account} isOpen={true} linkTo="/accounts" />
+    <AccountItem key={ account.id } { ...account } isOpen={ true } linkTo="/accounts" />
     <HistoryHead>История операций</HistoryHead>
-    <OperationList sendOperation={sendOperation} operations={account.operations.sort((a, b) => b.date - a.date)} currency={account.currency} />
+    <OperationList sendOperation={ sendOperation } operations={ account.operations.sort((a, b) => b.date - a.date) } currency={ account.currency } />
   </div>
 );
 
 
 const mapStateToProps = (state, ownProps) => ({
-  account: state.accounts.find(item => item.id == ownProps.id)
-})
+  account: state.accounts.find(item => item.id === ownProps.id),
+});
 
 export default connect( mapStateToProps, { sendOperation })(AccountOpen);

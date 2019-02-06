@@ -8,9 +8,9 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
   margin: 30px 0;
-  ${p => p.reversed && css`
+  ${ p => p.reversed && css`
     justify-content: flex-start;
-  `}
+  ` }
   &:first-of-type{
     margin-top: 0;
   }
@@ -38,11 +38,11 @@ const Profile = styled.img`
   height: 41px;
   margin-left: 15px;
   order: 2;
-  ${p => p.reversed && css`
+  ${ p => p.reversed && css`
     order: 0;
     margin-right: 15px;
     margin-left: 0;
-  `}
+  ` }
 `;
 
 const Head = styled.div`
@@ -63,7 +63,7 @@ const Transaction = styled.div`
 `;
 
 const ColorTransaction = styled.span`
-  color: ${p => p.isNegative ? '#de1c28' : '#6ece1a'};
+  color: ${ p => p.isNegative ? '#de1c28' : '#6ece1a' };
   padding-left: 10px;
 `;
 
@@ -77,12 +77,12 @@ const MessageOperation = ({ imgSrc, operationDate, operationType, operationSum, 
     <Wrapper>
       <Text>
         <Head>Операция</Head>
-        <CreatedDate>{createdDate}</CreatedDate>
-        <Transaction> {operationType} <ColorTransaction isNegative={isNegative}>{isNegative ? '-' : '+'} {sumString} {balanceSign}</ColorTransaction> </Transaction>
+        <CreatedDate>{ createdDate }</CreatedDate>
+        <Transaction> { operationType } <ColorTransaction isNegative={ isNegative }>{ isNegative ? '-' : '+' } { sumString } { balanceSign }</ColorTransaction> </Transaction>
       </Text>
-      <Profile src={imgSrc} />
+      <Profile src={ imgSrc } />
     </Wrapper>
-  )
+  );
 };
 
 export default MessageOperation;

@@ -51,19 +51,19 @@ const CreatedDate = styled.div`
 
 const AccountItem = ({ id, head, currency, balance, goal, createdAt }) => {
   const balanceSign = getBalanceSign(currency);
-  const balanceString = `${balance.toLocaleString()} ${balanceSign}`;
-  const goalString =  `${goal.toLocaleString()} ${balanceSign}`;
+  const balanceString = `${ balance.toLocaleString() } ${ balanceSign }`;
+  const goalString =  `${ goal.toLocaleString() } ${ balanceSign }`;
   const createdDate = formatDate(createdAt);
   return (
     <Wrapper>
       <Text>
-        <Head>{head}</Head>
-        <AccountId>Вклад № {id}</AccountId>
-        <CreatedDate>Cоздан: {createdDate}</CreatedDate>
-        <Sum>{balanceString} / {goalString}</Sum>
+        <Head>{ head }</Head>
+        <AccountId>Вклад № { id }</AccountId>
+        <CreatedDate>Cоздан: { createdDate }</CreatedDate>
+        <Sum>{ balanceString } / { goalString }</Sum>
       </Text>
     </Wrapper>
-  )
+  );
 };
 
 export default AccountItem;

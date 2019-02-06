@@ -26,7 +26,7 @@ const Transaction = styled.div`
 `;
 
 const ColorTransaction = styled.span`
-  color: ${p => p.isNegative ? '#de1c28' : '#6ece1a'};
+  color: ${ p => p.isNegative ? '#de1c28' : '#6ece1a' };
   padding-left: 10px;
 `;
 
@@ -46,21 +46,22 @@ const ToggleBtn = styled.i`
 `;
 
 const ChatIcon = styled.img.attrs({
-  src: '/img/chat.svg'
+  src: '/img/chat.svg',
 })``;
 
-const OperationItem = ({date, type, sum, currency, handleClick}) => {
+const OperationItem = ({ date, type, sum, currency, handleClick }) => {
   const balanceSign = getBalanceSign(currency);
   const isNegative = sum < 0;
-  const sumString = `${sum.toLocaleString().replace('-', '')} ${balanceSign}`;
+  const sumString = `${ sum.toLocaleString().replace('-', '') } ${ balanceSign }`;
   const createdDate = formatDate(date, true);
 
   return (
-  <Wrapper>
-      <CreatedDate>{createdDate }</CreatedDate>
-      <Transaction> {type} <ColorTransaction isNegative={isNegative}>{isNegative ? '-' : '+'} {sumString}</ColorTransaction> </Transaction>
-      <ToggleBtn onClick={handleClick} > <ChatIcon /> </ToggleBtn>
-  </Wrapper>
-)};
+    <Wrapper>
+      <CreatedDate>{ createdDate }</CreatedDate>
+      <Transaction> { type } <ColorTransaction isNegative={ isNegative }>{ isNegative ? '-' : '+' } { sumString }</ColorTransaction> </Transaction>
+      <ToggleBtn onClick={ handleClick } > <ChatIcon /> </ToggleBtn>
+    </Wrapper>
+  );
+};
 
 export default OperationItem;

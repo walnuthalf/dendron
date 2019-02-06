@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.div`
-  width: ${p => `${p.width}px` || ''};
+  width: ${ p => `${ p.width }px` || '' };
   margin:0 auto;
 `;
 
@@ -31,8 +31,8 @@ const Item = styled(NavLink)`
   }
 `;
 
-const InfoToggle = ({width}) => (
-  <Wrapper width={width}>
+const InfoToggle = ({ width }) => (
+  <Wrapper width={ width }>
     <Item to="/accounts"> Счета</Item>
     <Item to="/deposits"> Вклады</Item>
   </Wrapper>

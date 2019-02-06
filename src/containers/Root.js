@@ -5,7 +5,7 @@ import { HashRouter as Router } from 'react-router-dom';
 
 import store from '../store';
 
-import Chat from './Chat'
+import Chat from './Chat';
 import SideInfo from './SideInfo';
 
 const Wrapper = styled.div`
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const Root = () => (
-  <Provider store={store}>
+  <Provider store={ store }>
     <Router>
       <Wrapper>
         <Chat />

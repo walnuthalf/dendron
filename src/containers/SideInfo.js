@@ -22,13 +22,13 @@ const ListsWrapper = styled.div`
 
 const SideInfo = () => (
   <Wrapper>
-    <InfoToggle width={346} />
+    <InfoToggle width={ 346 } />
 
     <ListsWrapper>
       <Switch>
-        <Route path="/accounts" exact render={() => (<AccountList />)} />
-        <Route path="/accounts/:id" exact render={({ match }) => (<AccountOpen id={match.params.id} />)} />
-        <Route path="/deposits" exact render={() => (<DepositList />)} />
+        <Route path="/accounts" exact render={ () => (<AccountList />) } />
+        <Route path="/accounts/:id" exact render={ ({ match }) => (<AccountOpen id={ match.params.id } />) } />
+        <Route path="/deposits" exact render={ () => (<DepositList />) } />
         <Redirect to="/accounts" />
       </Switch>
     </ListsWrapper>

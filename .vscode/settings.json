@@ -1,0 +1,15 @@
+{
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/.githooks": false,
+    "**/node_modules": true,
+    "**/*.map": true,
+    "build": true
+  },
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true
+}

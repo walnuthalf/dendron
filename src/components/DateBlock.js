@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { formatDate } from '../helpers';
-import MessageList from './MessageList'
+import MessageList from './MessageList';
 
 const DateTime = styled.div`
   color: #b7b7b7;
@@ -13,21 +13,22 @@ const DateTime = styled.div`
 `;
 
 const Wrapper = styled.div`
-    &:first-of-type > ${DateTime}{
+    &:first-of-type > ${ DateTime }{
       margin-top: 0;
     }
 `;
 
-const DateBlock = ({messages, firstMessageDate}) => {
+const DateBlock = ({ messages, firstMessageDate }) => {
 
-  const dateString = ` — ${formatDate(firstMessageDate)} — `;
+  const dateString = ` — ${ formatDate(firstMessageDate) } — `;
   const filteredMessages = messages.sort((a, b) => b.sentDate - a.sentDate);
 
   return (
     <Wrapper>
-      <DateTime>{dateString}</DateTime>
-      <MessageList messages={filteredMessages} />
+      <DateTime>{ dateString }</DateTime>
+      <MessageList messages={ filteredMessages } />
     </Wrapper>
-)};
+  );
+};
 
 export default DateBlock;

@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import styled from 'styled-components';
 
 import Channel from '../components/Channel';
+import SearchBox from '../components/SearchBox';
 
 const GET_CHANNELS = gql `
   query {
@@ -27,29 +28,39 @@ const GET_CHANNELS = gql `
 `;
 
 const Wrapper = styled.div`
-  flex-basis: 40%;
-  padding: 45px;
-  padding-top: 64px;
+  flex: 0 0 25%;
   box-sizing: border-box;
+  min-width: 0;
 `;
 
 const ChannelsWrapper = styled.div`
-  margin-top: 55px;
-  height: 72vh;
+  height: 100vh;
   overflow: auto;
 `;
 
 const Channels = () => (
-    <Query query={GET_CHANNELS}>
-    {({data}) => (
-        <Wrapper>
-          <ChannelsWrapper>
-            {data.channels && data.channels.map(channel => (
-              <Channel channel={channel} />
-            ))}
-          </ChannelsWrapper>
-        </Wrapper>
-    )}
+  <Query query={ GET_CHANNELS }>
+    { ({ data }) => (
+      <Wrapper>
+        <ChannelsWrapper>
+          <SearchBox />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          <Channel />
+          { /* { data.channels && data.channels.map(channel => (
+          <Channel key={ channel.name } channel={ channel } />
+        )) } */ }
+        </ChannelsWrapper>
+      </Wrapper>
+    ) }
   </Query>
 );
 

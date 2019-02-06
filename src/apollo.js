@@ -4,11 +4,11 @@ import { HttpLink } from 'apollo-link-http';
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
-  uri: 'http://45.76.252.132:4000/api'
-})
+  uri: 'http://45.76.252.132:4000/api',
+});
 const client = new ApolloClient({
   cache,
-  link
-})
+  link,
+});
 
-export default client
+export default client;

@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 
 import client from './apollo';
 
-import Pages from './pages'
+import Pages from './pages';
 
 client.query({
   query: gql`
@@ -31,14 +31,14 @@ client.query({
         type
       }
     }
-  `
-}).then(result => console.log(result))
+  `,
+}).then(result => console.log(result));
 
 const App = () => (
-  <ApolloProvider client={client}>
+  <ApolloProvider client={ client }>
     <Pages/>
   </ApolloProvider>
-)
+);
 
 export default App;
 
