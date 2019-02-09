@@ -12,10 +12,24 @@ const Wrapper = styled.div`
   justify-content: center;
   min-width: 0;
   &:hover{
-    background-color: pink;
+    background-color: rgba(82, 175, 241, .4);
   }
   &:nth-child(1){
     border-top: 0;
+  }
+
+    ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background-color: #e4e4e4;
+      border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #52aff1;
   }
 `;
 
@@ -32,6 +46,9 @@ const Date = styled.div`
 
 const Name = styled.p`
   font-size: 16em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const Message = styled.div`

@@ -36,6 +36,19 @@ const Wrapper = styled.div`
 const ChannelsWrapper = styled.div`
   height: 100vh;
   overflow: auto;
+  /* ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background-color: #e4e4e4;
+      border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #52aff1;
+  } */
 `;
 
 const Channels = () => (
